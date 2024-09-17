@@ -8,7 +8,7 @@
     "start": "webpack serve"
   },
   "keywords": [],
-  "author": "disney_",
+  "author": "disney_ <dijoao.djfv@gmail.com>",
   "license": "ISC",
   "description": "",
   "devDependencies": {
