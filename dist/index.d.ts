@@ -6,6 +6,7 @@ import { AlignmentType } from './types/Alignment';
 import './styles/main.scss';
 import { BlockType } from './types/Block';
 export default class AlignmentTune {
+    #private;
     api: any;
     data: IData;
     config: IConfig;

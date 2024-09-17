@@ -28,14 +28,19 @@ export default class AlignmentTune {
     getDefaultAlignment(): AlignmentType {
         // Get the current block settings
         const blockSettings = this.getCurrentBlockSettings();
-        // If a custom default alignment is provided
-        if (blockSettings && blockSettings.default) {
+        // If a custom default alignment is provided and is valid
+        if (blockSettings
+            && blockSettings.default
+            && this.#alignmentIsValid(blockSettings.default)
+        ) {
             // Use it
             return blockSettings.default;
         }
 
-        // If a custom default alignment is provided
-        if (this.config.default) {
+        // If a custom default alignment is provided and is valid
+        if (this.config.default
+            && this.#alignmentIsValid(this.config.default)
+        ) {
             // Use it
             return this.config.default;
         }
@@ -74,12 +79,15 @@ export default class AlignmentTune {
 
             // For each desired block alignment
             blockSettings.availableAlignments.forEach(availableAlignment => {
-                // Finds the respective alignment object
-                const alignment = allAlignments.find(targetAlignment => targetAlignment.name === availableAlignment);
-                // If exists
-                if (alignment) {
-                    // Push it to the available alignments list
-                    availableAlignments.push(alignment);
+                // If the desired alignment is valid
+                if (this.#alignmentIsValid(availableAlignment)) {
+                    // Finds the respective alignment object
+                    const alignment = allAlignments.find(targetAlignment => targetAlignment.name === availableAlignment);
+                    // If exists
+                    if (alignment) {
+                        // Push it to the available alignments list
+                        availableAlignments.push(alignment);
+                    }
                 }
             });
             
@@ -205,5 +213,14 @@ export default class AlignmentTune {
 
     save() {
         return this.data;
+    }
+
+    #alignmentIsValid(alignment: string): boolean {
+        const alignments = ['left', 'center', 'right', 'justify'];
+        if (alignments.includes(alignment)) {
+            return true;
+        }
+        console.error(`Package "editor-js-alignment-tune" error: Invalid alignment "${alignment}" provided. The available values are "${alignments.join('" | "')}".`)
+        return false;
     }
 }
