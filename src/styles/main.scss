@@ -1,0 +1,17 @@
+.cdx-alignment-tune {
+    &.cdx-alignment-tune--left {
+        text-align: left;
+    }
+
+    &.cdx-alignment-tune--right {
+        text-align: right;
+    }
+
+    &.cdx-alignment-tune--center {
+        text-align: center;
+    }
+
+    &.cdx-alignment-tune--justify {
+        text-align: justify;
+    }
+}

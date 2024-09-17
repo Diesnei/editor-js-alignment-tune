@@ -1,0 +1,1 @@
+{"version":3,"file":"Block.d.ts","sourceRoot":"","sources":["../../src/types/Block.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,aAAa,CAAA;AAE3C,MAAM,MAAM,SAAS,GAAG;IACpB,OAAO,EAAE,SAAS,GAAC,aAAa,CAAC;IACjC,mBAAmB,EAAE,SAAS,GAAC,aAAa,EAAE,CAAA;CACjD,CAAA"}
