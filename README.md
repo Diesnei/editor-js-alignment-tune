@@ -1,7 +1,7 @@
 
 # Editor JS Alignment Tune
 
-A simple but very customizable text alignment block tune for Editor Js package. Uses official package icons (https://github.com/codex-team/icons) for better UI and UX compatibility.
+A simple but very customizable text alignment block tune for Editor Js package. Uses [official package icons](https://github.com/codex-team/icons) for better UI and UX compatibility.
 
 
 ## Features
